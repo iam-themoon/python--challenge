@@ -25,9 +25,6 @@ with open(csv_path) as csv_file:
     permonth = []       #for all P/L per month
     changes = []        #for the monthly changes
 
-    #create dictionary for month values and their changes
-    #changes2 = {}
-
     #for loop to read csv
     for row in csv.reader(csv_file):
         rowcount += 1                   #count rows
@@ -51,6 +48,7 @@ with open(csv_path) as csv_file:
     #find the greatest increase and decrease 
     greatestinc = max(changes)
     greatestdec = min(changes)
+    
     #find the index number for above values, used to reference the corresponding month values
     incindex = changes.index(greatestinc)
     decindex = changes.index(greatestdec)
